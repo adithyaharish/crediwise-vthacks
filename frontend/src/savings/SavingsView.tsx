@@ -4,7 +4,11 @@ import { fetchSavingsSummary } from '../services/api'
 
 const SURFACE = 'bg-slate-900/80'
 
-const SavingsView = () => {
+type SavingsViewProps = {
+  onBack?: () => void
+}
+
+const SavingsView = ({ onBack }: SavingsViewProps = {}) => {
   const [metrics, setMetrics] = useState<SavingsMetric[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -50,7 +54,7 @@ const SavingsView = () => {
           </p>
         </div>
         <button
-          onClick={onBack}
+          onClick={() => onBack?.()}
           className="rounded-full border border-emerald-500/40 px-4 py-2 text-xs font-semibold text-emerald-200 transition hover:bg-emerald-500 hover:text-slate-950"
         >
           Back to dashboard
