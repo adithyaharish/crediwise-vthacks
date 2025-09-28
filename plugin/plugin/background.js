@@ -1,7 +1,7 @@
 // Endpoint to POST when a checkout page is detected
-const API_BASE_URL = 'http://localhost:5000'; // TODO: replace with your deployed backend URL
+const API_BASE_URL = 'https://crediwise-backend.onrender.com'; // TODO: replace with your deployed backend URL
 const CHECKOUT_ENDPOINT = `${API_BASE_URL}/checkout`;
-const DASHBOARD_BASE_URL = 'http://localhost:5173/dashboard'; // TODO: replace with deployed dashboard URL
+const DASHBOARD_BASE_URL = 'https://crediwise-weld.vercel.app/dashboard'; // TODO: replace with deployed dashboard URL
 
 // Inject on pages that likely relate to checkout: URL contains "/checkout" OR
 // broader keywords so the content script can run DOM heuristics.
