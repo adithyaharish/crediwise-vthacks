@@ -23,7 +23,7 @@ if not SUPABASE_URL or not SUPABASE_SERVICE_KEY:
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 
 app = Flask(__name__)
-CORS(app, origins=[os.getenv("FRONTEND_ORIGIN", "https://crediwise-one.vercel.app/")], supports_credentials=True)
+CORS(app, origins=[os.getenv("FRONTEND_ORIGIN", "https://crediwise-weld.vercel.app/")], supports_credentials=True)
 
 
 def response_error(resp: Any) -> Any:
