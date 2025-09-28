@@ -37,6 +37,7 @@ flask run --port 5000
 cd frontend
 npm install
 # create .env.local with VITE_API_URL=http://localhost:5000
+npm run dev
 ```
 
 ### Browser Extension
@@ -54,6 +55,3 @@ npm install
 | `frontend/` | Vite + React SPA with Tailwind styling, views for login, dashboard, savings. |
 | `backend/`  | Flask API backed by Supabase; handles auth, card data, checkout insights.    |
 | `plugin/`   | Manifest V3 Chrome extension (content + background scripts, manifest).       |
-
-npm run dev
-
