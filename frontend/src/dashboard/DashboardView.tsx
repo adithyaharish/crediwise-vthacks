@@ -54,7 +54,6 @@ function DashboardView({
     'See the best card to use right now and how other cards would compare.'
   const domainLabel = checkoutPreview?.website
   const purchaseAmount = checkoutPreview?.amount
-  const category = checkoutPreview?.category
   const fallbackCard = selectedCards[0] ?? null
 
   return (

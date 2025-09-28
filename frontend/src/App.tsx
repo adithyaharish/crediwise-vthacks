@@ -3,7 +3,7 @@ import type { AppView, AuthUser, CardOption } from './types'
 import LoginView from './auth/LoginView'
 import CardSetupView from './cards/CardSetupView'
 import DashboardView from './dashboard/DashboardView'
-import SavingsView from './dashboard/SavingsView'
+import DashboardSavingsView from './dashboard/SavingsView'
 import {
   fetchCardSelections,
   fetchCards,
@@ -18,7 +18,6 @@ import {
 import CardwiseLogo from './assets/cardwise-logo.svg'
 
 const APP_BACKGROUND = 'bg-slate-950'
-const SURFACE_BORDER = 'border border-slate-800/70'
 const NAV_BUTTON_BASE = 'rounded-full px-3 py-1 transition'
 const NAV_BUTTON_ACTIVE = 'bg-emerald-500 text-slate-950'
 const NAV_BUTTON_INACTIVE = 'text-slate-400 hover:text-emerald-200'
@@ -31,7 +30,6 @@ function App() {
   const [allCards, setAllCards] = useState<CardOption[]>([])
   const [cardLoadError, setCardLoadError] = useState<string | null>(null)
   const [loginError, setLoginError] = useState<string | null>(null)
-  const [checkoutToken, setCheckoutToken] = useState<string | null>(null)
   const [checkoutPreview, setCheckoutPreview] = useState<CheckoutPreview | null>(null)
   const [isPreviewLoading, setPreviewLoading] = useState(false)
   const [previewError, setPreviewError] = useState<string | null>(null)
@@ -54,7 +52,6 @@ function App() {
     const params = new URLSearchParams(window.location.search)
     const tokenParam = params.get('token')
     if (tokenParam) {
-      setCheckoutToken(tokenParam)
       setView('dashboard')
       setPreviewLoading(true)
       fetchCheckoutRecommendation(tokenParam)
@@ -175,7 +172,7 @@ function App() {
         )
       case 'savings':
         return (
-          <SavingsView
+          <DashboardSavingsView
             onBack={() => setView('dashboard')}
             savings={userSavings}
             error={savingsError}

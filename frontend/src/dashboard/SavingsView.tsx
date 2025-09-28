@@ -15,7 +15,6 @@ import type {
   SavingsCard,
   SavingsCategory,
   SavingsSuggestion,
-  SavingsTimePoint,
   UserSavingsResponse,
 } from '../services/api'
 
@@ -167,7 +166,7 @@ function SavingsView({ onBack, savings, error }: SavingsViewProps) {
           </div>
           <div className="space-y-3">
             {categories.map((item: SavingsCategory, index) => (
-              <div key={item.category} className="rounded-2xl border border-slate-800/60 bg-slate-950/60 p-4 text-sm">
+              <div key={`${item.category}-${index}`} className="rounded-2xl border border-slate-800/60 bg-slate-950/60 p-4 text-sm">
                 <div className="flex items-center justify-between">
                   <p className="font-semibold text-white">{item.category}</p>
                   <span className="text-xs uppercase tracking-wide text-slate-500">{(item.percentage * 100).toFixed(0)}%</span>
