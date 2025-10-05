@@ -55,3 +55,7 @@ npm run dev
 | `frontend/` | Vite + React SPA with Tailwind styling, views for login, dashboard, savings. |
 | `backend/`  | Flask API backed by Supabase; handles auth, card data, checkout insights.    |
 | `plugin/`   | Manifest V3 Chrome extension (content + background scripts, manifest).       |
+
+
+## DevPost link:
+https://devpost.com/software/crediwise-use-the-right-card-every-time 
